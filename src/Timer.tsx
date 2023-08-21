@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
 function Timer() {
-  const [count, setCount] = useState(60);
+  const [timer, setTimer] = useState(60);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (count > 0) {
-        setCount(count - 1);
+      if (timer > 0) {
+        setTimer(timer - 1);
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [count]);
+  }, [timer]);
 
   return (
     <div>
-      <h1>{count}</h1>
+      Time remaining: {timer}
     </div>
   );
 }
